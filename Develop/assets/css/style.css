@@ -1,13 +1,15 @@
+/*styles entire doc*/
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
+/*styles body*/
 body {
   background-color: #d9dcd6;
 }
 
+/* not sure why this isn't coded as just 'header', instead of a class, but can't get CSS to work when I change it */
 .header {
   padding: 20px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -15,17 +17,17 @@ body {
   background-color: #2a607c;
   color: #ffffff;
 }
-
-.header h1 {
+/*only one 'h1' used, so removed extra divs*/
+h1 {
   display: inline-block;
   font-size: 48px;
 }
 
-.header h1 .seo {
+h1 .seo {
   color: #d9dcd6;
 }
-
-.header div {
+/*styles all the navigation and ul/li elements*/
+nav {
   padding-top: 15px;
   margin-right: 20px;
   float: right;
@@ -33,11 +35,11 @@ body {
   font-size: 20px;
 }
 
-.header div ul {
+nav ul {
   list-style-type: none;
 }
 
-.header div ul li {
+nav ul li {
   display: inline-block;
   margin-left: 25px;
 }
@@ -50,7 +52,7 @@ a {
 p {
   font-size: 16px;
 }
-
+/*styles classes specified after the period (.) with their corresponding attributes */
 .hero {
   height: 800px;
   width: 100%;
@@ -70,7 +72,7 @@ p {
   margin-left: 25px;
 }
 
-main {
+.content {
   width: 75%;
   display: inline-block;
   margin-left: 20px;
@@ -86,22 +88,14 @@ main {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #2589bd;
 }
-
-.benefit-lead {
-  margin-bottom: 32px;
-  color: #ffffff;
-}
-
-.benefit-brand {
-  margin-bottom: 32px;
-  color: #ffffff;
-}
-
+/*combined styling each of these classes, because CSS was the same*/
+.benefit-lead,
+.benefit-brand,
 .benefit-cost {
   margin-bottom: 32px;
   color: #ffffff;
 }
-
+/*
 .benefit-lead h3 {
   margin-bottom: 10px;
   text-align: center;
@@ -117,6 +111,16 @@ main {
   text-align: center;
 }
 
+All of these classes above are used to style 'h3' elements, so just combined and made a 'h3' style.
+*/
+
+h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/*
+Changed this to all being encompassed with an 'aside' tag.... all had the same properties, so combined into 'aside img' properties below.
 .benefit-lead img {
   display: block;
   margin: 10px auto;
@@ -134,7 +138,13 @@ main {
   margin: 10px auto;
   max-width: 150px;
 }
-
+*/
+aside img {
+  display: block;
+  margin: 10px auto;
+  max-width: 150px;
+}
+/*the next couple classes have the same attributes, but when I combined them under a selector of 'main {}', it didn't work, so leaving them */
 .search-engine-optimization {
   margin-bottom: 20px;
   padding: 50px;
@@ -162,6 +172,12 @@ main {
   color: #ffffff;
 }
 
+main .search-engine-optimization img,
+main .online-reputation-management img,
+main .social-media-marketing img {
+  max-height: 200px;
+}
+/*there has to be an easier way to do the above image max-height attribute, but need to keep classes because the nav uses them
 .search-engine-optimization img {
   max-height: 200px;
 }
@@ -173,7 +189,14 @@ main {
 .social-media-marketing img {
   max-height: 200px;
 }
+*/
 
+main h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+/* all these h2s are in new 'main' element, so combined them above, because same attributes.
 .search-engine-optimization h2 {
   margin-bottom: 20px;
   font-size: 36px;
@@ -188,8 +211,8 @@ main {
   margin-bottom: 20px;
   font-size: 36px;
 }
-
-.footer {
+/*removed class (.) because not in a div, just footer now*/
+footer {
   padding: 30px;
   clear: both;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -197,6 +220,6 @@ main {
   text-align: center;
 }
 
-.footer h2 {
+footer h2 {
   font-size: 20px;
 }
